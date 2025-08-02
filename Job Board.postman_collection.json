@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "74310e2a-22e4-40ff-ab69-8c680eeed38d",
+		"name": "Job Board",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "44129155"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\": \"Mohamed Ahmed\",\n  \"email\": \"mohamed@gmail.com\",\n  \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"mohamed@gmail.com\",\n  \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Get All Jobs",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyODgzOGU3My0yYWJhLTQ0MDUtYjRlOS0yOTUxNTkyOTA0ZjQiLCJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzU0MDI2NjMwLCJleHAiOjE3NTQxMTMwMzB9.Uv2elX1_rymf10vcukmHtq8AIqPogh5T5Zd5TIAkuac",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/jobs"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Job",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyODgzOGU3My0yYWJhLTQ0MDUtYjRlOS0yOTUxNTkyOTA0ZjQiLCJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzU0MDI2NjMwLCJleHAiOjE3NTQxMTMwMzB9.Uv2elX1_rymf10vcukmHtq8AIqPogh5T5Zd5TIAkuac",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Full Stack Developer\",\n  \"description\": \"Responsible for both frontend and backend tasks in a fast-paced environment.\",\n  \"location\": \"Cairo, Egypt\",\n  \"salary\": 20000,\n  \"status\": \"OPEN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/jobs"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Job By ID",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyODgzOGU3My0yYWJhLTQ0MDUtYjRlOS0yOTUxNTkyOTA0ZjQiLCJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzU0MDI2NjMwLCJleHAiOjE3NTQxMTMwMzB9.Uv2elX1_rymf10vcukmHtq8AIqPogh5T5Zd5TIAkuac",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/jobs/a7103e75-60e6-4d8c-ba26-695fb59fe7a4"
+					},
+					"response": []
+				},
+				{
+					"name": "Update job",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyODgzOGU3My0yYWJhLTQ0MDUtYjRlOS0yOTUxNTkyOTA0ZjQiLCJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzU0MDI2NjMwLCJleHAiOjE3NTQxMTMwMzB9.Uv2elX1_rymf10vcukmHtq8AIqPogh5T5Zd5TIAkuac",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"salary\": 30000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/jobs/a7103e75-60e6-4d8c-ba26-695fb59fe7a4"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete job",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyODgzOGU3My0yYWJhLTQ0MDUtYjRlOS0yOTUxNTkyOTA0ZjQiLCJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzU0MDI2NjMwLCJleHAiOjE3NTQxMTMwMzB9.Uv2elX1_rymf10vcukmHtq8AIqPogh5T5Zd5TIAkuac",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/jobs/a7103e75-60e6-4d8c-ba26-695fb59fe7a4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "Submit application",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZWFhNTkzOS05MzE5LTRjYmUtODQ5Yy01YjI4ZmY1ZmM3MzgiLCJlbWFpbCI6IkFobWVkQGdtYWlsLmNvbSIsInJvbGUiOiJKT0JTRUVLRVIiLCJpYXQiOjE3NTQxMTQxMzksImV4cCI6MTc1NDIwMDUzOX0.JUvbNjILcgBCswg2uHr9Sby7y5aooPmdvl9vfj9HGqY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resumeText\": \"I have 5 years of experience in backend development.\",\n  \"coverLetter\": \"I'm very interested in the role and excited to contribute.\",\n  \"status\": \"SUBMITTED\",\n  \"jobId\": \"b6a3c5b0-2eda-43d8-b4db-770098b243b5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/applications"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all applications",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZWFhNTkzOS05MzE5LTRjYmUtODQ5Yy01YjI4ZmY1ZmM3MzgiLCJlbWFpbCI6IkFobWVkQGdtYWlsLmNvbSIsInJvbGUiOiJKT0JTRUVLRVIiLCJpYXQiOjE3NTQxMTQxMzksImV4cCI6MTc1NDIwMDUzOX0.JUvbNjILcgBCswg2uHr9Sby7y5aooPmdvl9vfj9HGqY",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/applications"
+					},
+					"response": []
+				},
+				{
+					"name": "Get application by id",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZWFhNTkzOS05MzE5LTRjYmUtODQ5Yy01YjI4ZmY1ZmM3MzgiLCJlbWFpbCI6IkFobWVkQGdtYWlsLmNvbSIsInJvbGUiOiJKT0JTRUVLRVIiLCJpYXQiOjE3NTQxMTQxMzksImV4cCI6MTc1NDIwMDUzOX0.JUvbNjILcgBCswg2uHr9Sby7y5aooPmdvl9vfj9HGqY",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/applications/03f7e8e6-1b53-491c-96dc-c41329fd8899"
+					},
+					"response": []
+				},
+				{
+					"name": "Update application",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZWFhNTkzOS05MzE5LTRjYmUtODQ5Yy01YjI4ZmY1ZmM3MzgiLCJlbWFpbCI6IkFobWVkQGdtYWlsLmNvbSIsInJvbGUiOiJKT0JTRUVLRVIiLCJpYXQiOjE3NTQxMTQxMzksImV4cCI6MTc1NDIwMDUzOX0.JUvbNjILcgBCswg2uHr9Sby7y5aooPmdvl9vfj9HGqY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resumeText\": \"I have 3 years of experience in backend development.\",\n  \"coverLetter\": \"I'm very interested in the role and excited to contribute.\",\n  \"status\": \"REVIEWED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/applications/03f7e8e6-1b53-491c-96dc-c41329fd8899"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete application",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZWFhNTkzOS05MzE5LTRjYmUtODQ5Yy01YjI4ZmY1ZmM3MzgiLCJlbWFpbCI6IkFobWVkQGdtYWlsLmNvbSIsInJvbGUiOiJKT0JTRUVLRVIiLCJpYXQiOjE3NTQxMTQxMzksImV4cCI6MTc1NDIwMDUzOX0.JUvbNjILcgBCswg2uHr9Sby7y5aooPmdvl9vfj9HGqY",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/applications/03f7e8e6-1b53-491c-96dc-c41329fd8899"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get all users with thier applications",
+					"request": {
+						"auth": {
+							"type": "inherit",
+							"inherit": {}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyODgzOGU3My0yYWJhLTQ0MDUtYjRlOS0yOTUxNTkyOTA0ZjQiLCJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzU0MTE2Mzk0LCJleHAiOjE3NTQyMDI3OTR9.M3XiRoXPWl-ZiEhKtN3jsYzvjcAY8_kqY2FL7cn8pq8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
