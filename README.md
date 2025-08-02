@@ -1,4 +1,4 @@
-# WeTheMakers Backend Assignment
+# Job Board System
 
 This is a backend project for the WeTheMakers assignment built using **NestJS**, **Prisma**, and **PostgreSQL**.
 It implements features related to user registration, job posting, and job application management.
@@ -30,12 +30,14 @@ It implements features related to user registration, job posting, and job applic
 
 ### 🛠 Technologies Used:
 
-- Node.js
-- NestJS
-- Prisma ORM
-- PostgreSQL
-- JWT for authentication
-- Class-validator for input validation
+- **Node.js**
+- **NestJS**
+- **Prisma ORM**
+- **PostgreSQL**
+- **JWT** for authentication
+- **Class-validator** for input validation
+- **Swagger** for API documentation
+
 
 ### 📌 Assumptions Made:
 
@@ -52,3 +54,4 @@ It implements features related to user registration, job posting, and job applic
 - Basic error handling — can be enhanced with global filters and better validation responses.
 - Currently lacks automated testing (unit/e2e).
 - Email notifications (e.g., for application confirmation) are not implemented.
+
