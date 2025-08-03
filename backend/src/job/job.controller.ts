@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post, UseGuards } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post, Query, UseGuards } from "@nestjs/common";
 import { JwtAuthGuard } from "src/auth/jwt-auth.guard";
 import { Roles } from "src/common/decorators/roles.decorator";
 import { RolesGuard } from "src/common/guards/roles.guard";
@@ -27,9 +27,17 @@ export class JobController {
   @Get()
   @ApiOperation({ summary: 'Get all jobs (public)' })
   @ApiResponse({ status: 200, description: 'List of jobs.' })
-  findAll() {
-    return this.jobService.getAllJobs();
-  }
+  async findAll(
+  @Query('page') page = 1,
+  @Query('limit') limit = 10,
+  @Query('location') location?: string,
+  @Query('status') status?: string
+) {
+  return this.jobService.getAllJobs({ page: +page, limit: +limit, location, status });
+}
+  // findAll() {
+  //   return this.jobService.getAllJobs();
+  // }
 
   @Get(':id')
   @ApiOperation({ summary: 'Get a specific job by ID (public)' })
